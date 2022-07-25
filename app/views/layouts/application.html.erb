@@ -11,10 +11,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+ <body>
   <div class="container">
+    <%= render partial: "shared/flash" %>
     <%= yield %>
-      <%= render partial: "shared/flash" %>
-     </div>
+  </div>
   </body>
 </html>
