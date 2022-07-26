@@ -1,0 +1,47 @@
+ <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area ">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu white_text  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li> <%= link_to "Home", root_path, class: "nav-link" %></li>
+                                        <li> <%= link_to "All Recipes", recipes_path, class: "nav-link" %></li>
+                                        <li><a href="about.html">Foods</a></li>
+                                        <li><a href="#">Profile<i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <% if current_user %>
+                                                  <li class="nav-item">
+                                                  <span><%= current_user.name %></span>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+                                                  </li>
+                                                  <% else %>
+                                                  <li class="nav-item">
+                                                    <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+                                                  </li>
+                                                  <% end %>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

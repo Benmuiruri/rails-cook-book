@@ -1,1 +1,29 @@
-<h1>This is the list of all Recipes</h1>
+<%= render partial: "layouts/header/black_header" %>
+<%= render partial: "layouts/elements/bradcam" %>
+
+<div class="recepie_area plus_padding">
+  <div class="container">
+  <div class="text-center mb-4">
+    <%= link_to "Add New Recipe", new_recipe_path, class: "line_btn" %>
+  </div>
+    <% if @recipes.blank? %>
+      <h2>There are no recipes, check back later</h2>
+    <% else %>
+      <div class="row">
+        <% @recipes.each do |recipe|%>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+          <div class="single_recepie text-center">
+            <div class="recepie_thumb">
+              <img src="https://res.cloudinary.com/optprime/image/upload/v1658841781/community_blog/recpie_3_q2bdjn.png" alt="Recipe">
+              </div>
+              <h3><%= recipe.name %></h3>
+              <p>Preparation Time: <%= recipe.preparation_time %> hour</p>
+              <p>Cooking Time: <%= recipe.cooking_time %> hour</p>
+              <%= link_to "View Recipe", recipe_path(recipe.id), class: "line_btn" %>
+            </div>
+          </div>
+        <%end%>
+      <%end %>
+    </div>
+  </div>
+</div>
