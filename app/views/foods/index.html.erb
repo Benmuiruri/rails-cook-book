@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Foods list</h1>
+  
+  <table class="table table-bordered table-hover">
+    <thead class="table-secondary">
+      <tr>
+        <th>Food</th>
+        <th>Measurement unit</th>
+        <th>Unit price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <th class="align-middle"><%= food.name %></th>
+          <td class="align-middle"><%= food.measurement_unit %></td>
+          <td class="align-middle">$<%= food.price %></td>
+          <td class="align-middle"><%= button_to 'Delete', food_url(food), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br>
+  
+  <%= link_to 'Add Food', new_food_path, class: "btn btn-success"%>
+</div>
