@@ -6,6 +6,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "All Recipes", recipes_path, class: "nav-link" %>
+        </li>
         <% if current_user %>
         <li class="nav-item">
           <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-outline-secondary", data: { turbo_method: :delete } %>
