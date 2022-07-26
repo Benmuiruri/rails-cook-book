@@ -1,1 +1,18 @@
 <h1>This is the list of all Recipes</h1>
+
+<% if @recipes.blank? %>
+  <h2>There are no recipes, check back later</h2>
+<% else %>
+<% @recipes.each do |recipe|%>
+  <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= recipe.name %></h5>
+    <p class="card-text"><%= recipe.description %></p>
+  </div>
+  <div class="card-body">
+    <a href="#" class="card-link">Delete Recipe</a>
+  </div>
+</div>
+  <%end%>
+<%end %>
