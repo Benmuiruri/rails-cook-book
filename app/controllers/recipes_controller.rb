@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  def index 
+  def index
     @recipes = Recipe.includes(:user).where(user_id: current_user.id)
   end
 
@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     if @recipe.save
-     redirect_to recipe_path(@recipe.id), notice: 'New recipe created successfully.'
+      redirect_to recipe_path(@recipe.id), notice: 'New recipe created successfully.'
     else
       flash[:alert] = 'Something went wrong, recipe not created'
       render :new, status: :unprocessable_entity
@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
   end
 
   private
-  
+
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
