@@ -1,6 +1,6 @@
 <div class="d-flex flex-row justify-content-between">
 <div>
-  <%= button_to "Generate Shopping List", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class: 'btn btn-danger' %>
+  <%= link_to "Generate Shopping List", recipe_recipe_food_general_shopping_list_path(recipe), class: 'line_btn' %>
 </div>
 <div>
   <% if recipe.user == current_user  %>
