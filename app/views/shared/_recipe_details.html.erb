@@ -23,10 +23,11 @@
                 <div class="col-xl-12">
                 <h2>Steps to follow</h2>
                     <div class="recepies_text">
-                    <p><%= @recipe.description %></p>
-                    <h3 class="py-4 text-center">Add recipe ingredients</h3>
+                        <p><%= @recipe.description %></p>
+                        <h3 class="py-4 text-center">Add recipe ingredients</h3>
                     </div>
                 </div>
+             <%= render partial: "shared/ingredients" %>   
             </div>
         </div>
     </div>
