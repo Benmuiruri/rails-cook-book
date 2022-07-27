@@ -27,10 +27,8 @@
         <td><%= "#{recipe_food.quantity} #{recipe_food.food.measurement_unit}" %></td>
         <td><%= "$ #{recipe_food.quantity * recipe_food.food.price}" %></td>
         <td>
-          <% if user_signed_in? && recipe_food.recipe.user == current_user %>
-          <%= form_with(model: RecipeFood.new, url: recipe_recipe_food_path(@recipe, recipe_food) , method: :delete) do |f| %>
-            <%= f.submit 'Delete', class: 'cursor-pointer text-red-500' %>
-          <% end %>
+          <% if recipe_food.recipe.user == current_user %>
+           <%= button_to "Delete", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class: 'btn btn-danger' %> 
           <% end %>
         </td>
       </tr>
