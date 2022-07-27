@@ -7,11 +7,17 @@ class RecipeFoodsController < ApplicationController
 
   def create
     recipe = Recipe.find(params[:recipe_id])
-    new_recipe_food = RecipeFood.new(recipe_food_params)
-    new_recipe_food.recipe = recipe
-
-    new_recipe_food.save!
-    redirect_to recipe_path(recipe)
+    if recipe.user == current_user
+      new_recipe_food = RecipeFood.new(recipe_food_params)
+      new_recipe_food.recipe = recipe
+      if new_recipe_food.save
+        redirect_to recipe_path(recipe), notice: 'Food added to recipe successfully.'
+      else
+        flash[:alert] = 'Something went wrong, food not added to recipe'
+      end
+    else
+      flash[:alert] = 'Permission to add new food denied'
+    end
   end
 
   def destroy
