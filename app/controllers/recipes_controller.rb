@@ -1,12 +1,12 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: :public_recipes
+  before_action :authenticate_user!, except: :index
 
   def index
-    @recipes = Recipe.where(user_id: current_user.id)
+    @recipes = Recipe.all
   end
 
   def show
-    @recipe = Recipe.includes(:foods, :user).find(params[:id])
+    @recipe = Recipe.includes(:user).find(params[:id])
   end
 
   def new
@@ -30,8 +30,8 @@ class RecipesController < ApplicationController
     redirect_to recipes_path, notice: "Successfully deleted the recipe #{@recipe.name}."
   end
 
-  def public_recipes
-    @recipes = Recipe.public_recipes
+  def my_recipes
+    @recipes = Recipe.includes(:user).where(user_id: current_user.id)
   end
 
   private
