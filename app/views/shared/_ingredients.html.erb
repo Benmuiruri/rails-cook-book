@@ -1,10 +1,17 @@
-<% if recipe.user == current_user  %>
-  <%= form_with model: @RecipeFood, url: recipe_recipe_foods_path(recipe), method: :post do |form| %>
-    <%= form.number_field :quantity, placeholder: 'Quantity', min: 0 %>
-    <%= form.collection_select :food_id, recipe.user.foods, :id, :name %>
-    <%= form.submit 'Add', class: 'btn-primary' %>
+<div class="d-flex flex-row justify-content-between">
+<div>
+  <%= button_to "Generate Shopping List", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class: 'btn btn-danger' %>
+</div>
+<div>
+  <% if recipe.user == current_user  %>
+    <%= form_with model: @RecipeFood, url: recipe_recipe_foods_path(recipe), method: :post do |form| %>
+      <%= form.number_field :quantity, placeholder: 'Quantity', min: 0 %>
+      <%= form.collection_select :food_id, recipe.user.foods, :id, :name %>
+      <%= form.submit 'Add', class: 'btn-primary' %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+</div>
 
 <% if recipe.foods.blank? %>
   <p class="text-center">No foods available!</p>
