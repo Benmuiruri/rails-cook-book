@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "main#index"
-  resources :recipes, except: [:update]
+  resources :recipes, except: [:update] do
+    resources :recipe_foods, only: [:create, :destroy]
+  end
   resources :foods, except: [:update]
   get 'my_recipes', to: 'recipes#index'
   get 'public_recipes', to: 'recipes#public_recipes'
