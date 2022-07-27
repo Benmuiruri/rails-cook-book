@@ -1,10 +1,12 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: :public_recipes
+
   def index
-    @recipes = Recipe.includes(:user).where(user_id: current_user.id)
+    @recipes = Recipe.where(user_id: current_user.id)
   end
 
   def show
-    @recipe = Recipe.includes(:user).find(params[:id])
+    @recipe = Recipe.includes(:foods, :user).find(params[:id])
   end
 
   def new
@@ -20,6 +22,16 @@ class RecipesController < ApplicationController
       flash[:alert] = 'Something went wrong, recipe not created'
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to recipes_path, notice: "Successfully deleted the recipe #{@recipe.name}."
+  end
+
+  def public_recipes
+    @recipes = Recipe.public_recipes
   end
 
   private

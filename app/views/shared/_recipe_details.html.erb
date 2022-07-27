@@ -15,11 +15,7 @@
                                 <li><p><strong>Cooking Time</strong> : <%= @recipe.cooking_time %> hours </p></li>
                             </ul>
                         </div>
-                        <div class="links">
-                            <a href="#"> <i class="fa fa-facebook"></i> </a>
-                            <a href="#"> <i class="fa fa-twitter"></i> </a>
-                            <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                        </div>
+                        <%= button_to "Delete Recipe", recipe_path(@recipe.id), method: :delete, class: "line_btn" %>
                     </div>
                 </div>
             </div>
@@ -27,10 +23,11 @@
                 <div class="col-xl-12">
                 <h2>Steps to follow</h2>
                     <div class="recepies_text">
-                    <p><%= @recipe.description %></p>
-                    <h3 class="py-4 text-center">Add recipe ingredients</h3>
+                        <p><%= @recipe.description %></p>
+                        <h3 class="py-4 text-center">Add recipe ingredients</h3>
                     </div>
                 </div>
+             <%= render partial: "shared/ingredients", locals: { recipe: @recipe } %>   
             </div>
         </div>
     </div>
