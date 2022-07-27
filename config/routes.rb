@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   root "main#index"
   resources :recipes, except: [:update]
   resources :foods, except: [:update]
-  get 'my_recipes', to: 'recipes#my_recipes'
+  get 'my_recipes', to: 'recipes#index'
   get 'public_recipes', to: 'recipes#public_recipes'
 end
