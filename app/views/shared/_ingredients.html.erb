@@ -10,34 +10,33 @@
   <p class="text-center">No foods available!</p>
 <% else %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% recipe.recipe_foods.each do |recipe_food| %>
+      <tr>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= "#{recipe_food.quantity} #{recipe_food.food.measurement_unit}" %></td>
+        <td><%= "$ #{recipe_food.quantity * recipe_food.food.price}" %></td>
+        <td>
+          <% if user_signed_in? && recipe_food.recipe.user == current_user %>
+          <%= form_with(model: RecipeFood.new, url: recipe_recipe_food_path(@recipe, recipe_food) , method: :delete) do |f| %>
+            <%= f.submit 'Delete', class: 'cursor-pointer text-red-500' %>
+          <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 
 <% end %>
