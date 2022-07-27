@@ -4,7 +4,7 @@
 <div class="recepie_area plus_padding">
   <div class="container">
   <div class="text-center mb-4">
-    <%= link_to "Add New Recipe", new_recipe_path, class: "line_btn" %>
+    <%= link_to "Add New Recipe", new_recipe_path, class: "line_btn" if user_signed_in?%>
   </div>
     <% if @recipes.blank? %>
       <h2>There are no recipes, check back later</h2>
