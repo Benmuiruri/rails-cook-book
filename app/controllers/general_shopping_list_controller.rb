@@ -1,5 +1,5 @@
 class GeneralShoppingListController < ApplicationController
- def index
+  def index
     @food_amount = 0
     @total_price = 0
     @recipe_foods = []
