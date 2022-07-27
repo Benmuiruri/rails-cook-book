@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :foods, except: [:update]
   get 'my_recipes', to: 'recipes#index'
   get 'public_recipes', to: 'recipes#public_recipes'
+  resources :general_shopping_list, only: [:index]
 end
