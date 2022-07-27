@@ -1,0 +1,41 @@
+<div class="wrapper" style="width: 100%;">
+  <div class="container mx-auto text-center">
+    <h3 class="display-6 my-3">Shopping List</h3>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col col-sm-6 my-2">
+          <% quan = 0 %>
+          <% @recipes.each do |recipe_food| %>
+            <% quan += recipe_food.quantity%>
+          <% end %>
+          <p>Amount of food items to buy: <strong><%= quan %></strong></p>
+        </div>
+        <div class="col col-sm-6 my-2">
+          <% rec = 0 %>
+          <% @recipes.each do |recipe_food| %>
+            <% rec += recipe_food.food.price * recipe_food.quantity%>
+          <% end %>
+          <p>Total value of food needed: $<strong><%= rec %></strong></p>
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipes.each do |recipe_food| %>
+        <tr>
+          <th class="align-middle"><%= recipe_food.food.name %></th>
+          <td class="align-middle"><%= "#{pluralize(recipe_food.quantity, recipe_food.food.measurement_unit)}"%></td>
+          <td class="align-middle">$<%= recipe_food.food.price %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
