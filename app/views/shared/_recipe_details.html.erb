@@ -27,7 +27,7 @@
                         <h3 class="py-4 text-center">Add recipe ingredients</h3>
                     </div>
                 </div>
-             <%= render partial: "shared/ingredients" %>   
+             <%= render partial: "shared/ingredients", locals: { recipe: @recipe } %>   
             </div>
         </div>
     </div>
