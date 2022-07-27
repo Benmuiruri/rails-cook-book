@@ -21,6 +21,9 @@ class RecipeFoodsController < ApplicationController
   end
 
   def destroy
+    @recipe_food = RecipeFood.includes(:recipe).find(params[:id])
+    @recipe_food.destroy
+    redirect_to recipe_path(@recipe_food.recipe), notice: "Successfully deleted the food #{@recipe_food.food.name}."
   end
   
   private
