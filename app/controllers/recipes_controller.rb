@@ -34,6 +34,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.includes(:user).where(user_id: current_user.id)
   end
 
+  def public_recipes
+    @recipes = Recipe.public_recipes
+  end
+
   private
 
   def recipe_params

@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :recipes, except: [:update]
   resources :foods, except: [:update]
   get 'my_recipes', to: 'recipes#my_recipes'
+  get 'public_recipes', to: 'recipes#public_recipes'
 end
