@@ -25,7 +25,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.destroy
     redirect_to recipe_path(@recipe_food.recipe), notice: "Successfully deleted the food #{@recipe_food.food.name}."
   end
-  
+
   private
 
   def recipe_food_params
