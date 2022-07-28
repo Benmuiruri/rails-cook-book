@@ -25,7 +25,6 @@
                         <% if user_signed_in? && @recipe.user == current_user %>
                             <%= button_to "Delete Recipe", recipe_path(@recipe.id), method: :delete, class: "line_btn" %>
                         <% end %>
-
                     </div>
                 </div>
             </div>
