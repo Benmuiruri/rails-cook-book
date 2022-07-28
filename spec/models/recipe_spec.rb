@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
   let(:recipe) do
     user.recipes.create(name: 'Pizza', cooking_time: 1, preparation_time: 2, description: 'Try to test', public: false)
   end
-  
+
   context 'recipe name' do
     it 'is valid with a name of more than 3 characters' do
       expect(recipe).to be_valid
@@ -19,6 +19,5 @@ RSpec.describe User, type: :model do
       recipe.description = ''
       expect(recipe).to_not be_valid
     end
-
   end
 end
