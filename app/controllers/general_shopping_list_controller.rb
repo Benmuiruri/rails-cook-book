@@ -1,4 +1,5 @@
 class GeneralShoppingListController < ApplicationController
+  before_action :authenticate_user!
   def index
     @food_amount = 0
     @total_price = 0
