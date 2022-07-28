@@ -19,7 +19,7 @@ RSpec.feature 'Recipe index page' do
       expect(page).to have_content @recipe.name
     end
 
-     scenario 'Shows cooking time for recipe' do
+    scenario 'Shows cooking time for recipe' do
       expect(page).to have_content('Cooking Time: 1 hour')
     end
   end

@@ -16,7 +16,7 @@ RSpec.feature 'Recipe show page' do
       click_link 'View Recipe'
     end
 
-    scenario 'Shows recipe details' do  
+    scenario 'Shows recipe details' do
       expect(page).to have_content @recipe.description
     end
 
