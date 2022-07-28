@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user) { User.create(name: 'Don', email: 'example@mail.com', password: 'password') }
-  
+
   context '.name' do
     it 'is not valid with a name less than 3 characters' do
       user.name = 'M'

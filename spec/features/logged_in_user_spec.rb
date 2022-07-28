@@ -23,6 +23,5 @@ RSpec.feature 'Users Page' do
       click_link 'View Recipe'
       expect(page).to have_content @recipe.description
     end
-
   end
 end
