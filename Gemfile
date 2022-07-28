@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
+gem 'bullet'
 gem 'devise'
 gem 'ffi'
 gem 'rspec'
