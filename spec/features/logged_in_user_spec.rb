@@ -19,5 +19,10 @@ RSpec.feature 'Users Page' do
       expect(page).to have_content @recipe.name
     end
 
+    scenario 'Shows recipe details' do
+      click_link 'View Recipe'
+      expect(page).to have_content @recipe.description
+    end
+
   end
 end
