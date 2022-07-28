@@ -11,12 +11,12 @@
 
     <div class="col-sm-10">
       <%= form.label :preparation_time, class: "form-label" %>
-      <%= form.number_field :preparation_time, autofocus: true, class: "form-control"%>
+      <%= form.number_field :preparation_time, autofocus: true, min: 0, class: "form-control" %>
     </div>
 
     <div class="col-sm-10">
       <%= form.label :cooking_time, class: "form-label" %>
-      <%= form.number_field :cooking_time, autofocus: true, class: "form-control" %>
+      <%= form.number_field :cooking_time, autofocus: true, min: 0, class: "form-control" %>
     </div>
 
     <div class="col-sm-10">
