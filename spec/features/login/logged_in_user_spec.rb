@@ -19,7 +19,7 @@ RSpec.feature 'Login Page' do
     end
 
     scenario 'shows sign out link after user login' do
-      expect(page).to have_content('Sign Out')
+      expect(page).to have_content('Sign out')
     end
   end
 end

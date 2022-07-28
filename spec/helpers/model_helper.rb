@@ -18,3 +18,16 @@ def create_recipes_for_user(user, count: 1)
   end
   recipes
 end
+
+def create_foods_for_user(user, count: 1)
+  foods = []
+  count.times do |i|
+    foods << Food.create!(
+      user:,
+      name: "Food #{i}",
+      measurement_unit: 'kg',
+      price: 5
+    )
+  end
+  foods
+end
