@@ -8,8 +8,19 @@
                 </div>
                 <div class="col-xl-6 col-md-6">
                     <div class="recepies_info">
-                        <div class="form-check form-switch text-center">
-                            <input class="form-check-input" type="checkbox" role="switch" <%= "checked" if @recipe.public %> disabled >
+                        <div class="d-flex justify-content-end mb-4">
+                        <span class="pr-4">Public</span>
+                         <div class="form-check form-switch text-center pl-4">
+                         <% if current_user.id == @recipe.user.id %> 
+                            <%= button_to recipe_path(@recipe.id), :method => :patch do %>
+                                <% if @recipe.public %>
+                                    <i class="fa-solid fa-toggle-on" style="font-size:24px;color:green"></i>
+                                <% else %>
+                                    <i class="fa-solid fa-toggle-off" style="font-size:24px;color:green"></i>
+                                <% end %>
+                            <% end %>
+                        <% end %>
+                        </div>
                         </div>
                         <h2><%= @recipe.name %></h2>
                         <div class="resepies_details">
@@ -18,7 +29,9 @@
                                 <li><p><strong>Cooking Time</strong> : <%= @recipe.cooking_time %> hours </p></li>
                             </ul>
                         </div>
-                        <%= button_to "Delete Recipe", recipe_path(@recipe.id), method: :delete, class: "line_btn" %>
+                        <% if user_signed_in? && @recipe.user == current_user %>
+                            <%= button_to "Delete Recipe", recipe_path(@recipe.id), method: :delete, class: "line_btn" %>
+                        <% end %>
                     </div>
                 </div>
             </div>

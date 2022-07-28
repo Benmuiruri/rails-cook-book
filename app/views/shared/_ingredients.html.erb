@@ -1,6 +1,10 @@
 <div class="d-flex flex-row justify-content-between">
 <div>
+
+<% if user_signed_in? && @recipe.user == current_user %>
   <%= link_to "Generate Shopping List", general_shopping_list_index_path, class: 'line_btn' %>
+<% end %>
+  
 </div>
 <div>
   <% if recipe.user == current_user  %>

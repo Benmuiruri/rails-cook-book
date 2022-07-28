@@ -5,6 +5,7 @@ ruby '3.1.2'
 gem 'bullet'
 gem 'devise'
 gem 'ffi'
+gem 'font-awesome-sass', '~> 6.1.2'
 gem 'rspec'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
