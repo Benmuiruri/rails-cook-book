@@ -9,6 +9,6 @@ class Recipe < ApplicationRecord
   validates :description, presence: true
 
   def self.public_recipes
-    @recipes = Recipe.includes(:user, recipe_foods: [:food]).where(public: true).order(created_at: :desc)
+    @recipes = Recipe.where(public: true).order(created_at: :desc)
   end
 end
