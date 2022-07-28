@@ -24,6 +24,18 @@ class RecipesController < ApplicationController
     end
   end
 
+  def update
+      @recipe = Recipe.find(params[:id])
+      if @recipe.public
+        @recipe.update(public: false)
+        flash[:notice] = 'You have updated the recipe status to private'
+      else
+        @recipe.update(public: true)
+        flash[:notice] = 'You have updated the recipe status to public'
+      end
+      redirect_to recipe_path(@recipe)
+  end
+
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy

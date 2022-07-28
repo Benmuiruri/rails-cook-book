@@ -12,18 +12,16 @@
                         <span class="pr-4">Public</span>
                          <div class="form-check form-switch text-center pl-4">
                          <% if current_user.id == @recipe.user.id %> 
-    <%= button_to recipe_path(@recipe.id), :method => :patch, class: "align-self-end public-btn" do %>
-      <% if @recipe.public %>
-        <i class="fa fa-toggle-on" style="font-size:48px;color:green"></i>
-      <% else %>
-        <i class="fa fa-toggle-off" style="font-size:48px;color:green"></i>
-      <% end %>
-    <% end %>
-    <% end %>
-                            <input class="form-check-input" type="checkbox" role="switch" <%= "checked" if @recipe.public %> disabled >
+                            <%= button_to recipe_path(@recipe.id), :method => :patch do %>
+                                <% if @recipe.public %>
+                                    <i class="fa-solid fa-toggle-on" style="font-size:24px;color:green"></i>
+                                <% else %>
+                                    <i class="fa-solid fa-toggle-off" style="font-size:24px;color:green"></i>
+                                <% end %>
+                            <% end %>
+                        <% end %>
                         </div>
                         </div>
-                       
                         <h2><%= @recipe.name %></h2>
                         <div class="resepies_details">
                             <ul>
