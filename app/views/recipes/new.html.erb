@@ -1,0 +1,37 @@
+<%= render partial: "layouts/header/black_header" %>
+<%= render partial: "layouts/elements/bradcam" %>
+<div class="container">
+<h2 class="text-center pt-4">Add a new Recipe</h2>
+  <%= form_with model: @recipe, url: recipes_path, method: :post do |form| %>
+
+    <div class="col-sm-10">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, :required => "required", autofocus: true, class: "form-control" %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= form.label :preparation_time, class: "form-label" %>
+      <%= form.number_field :preparation_time, autofocus: true, min: 0, class: "form-control" %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= form.label :cooking_time, class: "form-label" %>
+      <%= form.number_field :cooking_time, autofocus: true, min: 0, class: "form-control" %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= form.label :description, class: "form-label" %>
+      <%= form.text_area :description, size: "70x5", class: "form-control" %>
+    </div>
+
+    <div class="col-sm-10"> 
+      <%= form.label :public %>
+      <%= form.check_box :public, default:false %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit "Add Recipe", class: "line_btn" %>
+    </div>
+  <% end %>
+</div>
+

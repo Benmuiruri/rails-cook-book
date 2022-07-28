@@ -1,0 +1,30 @@
+<%= render partial: "layouts/header/black_header" %>
+<%= render partial: "layouts/elements/bradcam" %>
+<div class="container">
+  <h1 class="text-center mt-4">Shopping List</h1>
+  <div class="d-flex justify-content-between m-5">
+    <h3>Amount of food items to buy: <%= @food_amount %></h3>
+    <h3>Total value of food needed: $<%= @total_price %></h3>
+  </div>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @recipe_foods.each do |recipe_food| %>
+      <% recipe_food.each do |ingredients| %>
+      <tr>
+        <th scope="row"><%= ingredients.food.name %> </th>
+        <td><%= ingredients.quantity %><%= ingredients.food.measurement_unit %> </td>
+        <td>$ <%= ingredients.food.price * ingredients.quantity %></td>
+      </tr>
+      <% end %>
+      <%end %>
+   </tbody>
+  </table>
+</div>
