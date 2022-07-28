@@ -1,8 +1,8 @@
 require 'rails_helper'
 require 'helpers/model_helper'
 
-RSpec.feature 'Users Page' do
-  feature 'shows users' do
+RSpec.feature 'Recipe show page' do
+  feature 'shows recipe detail page' do
     background do
       visit new_user_session_path
       @user1 = User.create(name: 'Ben', email: 'ben@gmail.com', password: '123456')
