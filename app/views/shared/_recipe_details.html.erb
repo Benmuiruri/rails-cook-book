@@ -22,7 +22,10 @@
                                 <li><p><strong>Cooking Time</strong> : <%= @recipe.cooking_time %> hours </p></li>
                             </ul>
                         </div>
-                        <%= button_to "Delete Recipe", recipe_path(@recipe.id), method: :delete, class: "line_btn" %>
+                        <% if user_signed_in? && @recipe.user == current_user %>
+                            <%= button_to "Delete Recipe", recipe_path(@recipe.id), method: :delete, class: "line_btn" %>
+                        <% end %>
+
                     </div>
                 </div>
             </div>
