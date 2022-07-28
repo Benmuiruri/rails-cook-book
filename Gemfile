@@ -5,10 +5,9 @@ ruby '3.1.2'
 gem 'bullet'
 gem 'devise'
 gem 'ffi'
+gem 'font-awesome-sass', '~> 6.1.2'
 gem 'rspec'
 gem 'rubocop', '>= 1.0', '< 2.0'
-gem "font-awesome-sass", "~> 6.1.2"
-
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
