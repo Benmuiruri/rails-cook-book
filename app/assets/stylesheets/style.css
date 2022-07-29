@@ -1452,7 +1452,8 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(/assets/banner.png);
+  background-image: url(/assets/banner.jpg);
+  background-position: center;
 }
 
 /* line 4, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
