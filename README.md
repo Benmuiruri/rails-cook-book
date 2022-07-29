@@ -2,9 +2,10 @@
 
 # Rails-cook-book
 
-The Rails cook book  app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
+The Rails cook book  app keeps track of all your recipes and ingredients for the recipe. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
 ## Preview
+
 <img src="./app/assets/images/recipearea.png">
 
 # Getting Started
