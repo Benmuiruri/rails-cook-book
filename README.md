@@ -17,8 +17,11 @@ _To get a local copy up and running follow these simple steps._
    ```sh
    cd recipe-app
    ```
-
-3. Configure ` change  the Env credentials with your username and password
+3. Configure Database 
+   ```
+   change the .env credentials with your postgres username and password 
+   run rails db:reset
+   ```
 4. Run app
    ```sh
    rails server
@@ -28,22 +31,10 @@ _To get a local copy up and running follow these simple steps._
    rails s
    ```
 
-
 # Testing
 
 `bundle exec rspec` will run all the tests.
 
-Also, you can run `bundle exec rspec spec/` to run specific tests.
-
-You can also run `RAILS_ENV=test rspec spec/` to run the tests in test mode.
-
-## Errors
-
-If you encounter any errors, run the following commands.
-
-- Run `rails db:drop db:create db:migrate` to drop, create and migrate a new database.
-
-- Run `rubocop && rubocop -A` to check for and fix code errors.
 
 # This project was built with
 
@@ -83,8 +74,7 @@ Give a ⭐️ if you like this project!
 # Acknowledgement
 
 - Hat tip to anyone whose code was a source of inspiration.
-- https://themewagon.com/themes/free-bootstrap-4-html5-cooking-website-template-tasty-recipes/
-- A big thanks to [@microverseinc](https://github.com/microverseinc).
+- [Theme Wagon Bootsrap template](https://themewagon.com/themes/free-bootstrap-4-html5-cooking-website-template-tasty-recipes/)
 
 # 📝 License
 
