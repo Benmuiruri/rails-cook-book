@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Rails-cook-book
 
 The Rails cook book  app keeps track of all your recipes and ingredients for the recipe. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
@@ -52,17 +50,15 @@ _To get a local copy up and running follow these simple steps._
 
 👤 **Ben**
 
-- GitHub: [Ben Kiarie](https://github.com/Benmuiruri)
-- Twitter: [Optimize](https://twitter.com/_optimize)
-- LinkedIn: [Ben Kiarie](https://www.linkedin.com/in/benjamin-kiarie-180b66149/)
+- GitHub: [Ben Kiarie](https://github.com/Benmuiruri) - Follow me on Github, browse my projects, and leave a star for any project you like.
+- Twitter: [Optimize](https://twitter.com/_optimize) - Follow me on Twitter I will make your Timeline a bit more interesting
+- LinkedIn: [Ben Kiarie](https://www.linkedin.com/in/benjamin-kiarie-180b66149/) - Connect with me on LinkedIn lets expand our network for mutual benefits.
 
 
 # Author 2
 
 👤 **Ezekiel Utshudi**
 - GitHub: [@EzekielUtshudi](https://github.com/EzekielUtshudi)
-- Twitter: [@UtshudiEzekiel](https://twitter.com/UtshudiEzekiel)
-- LinkedIn: [@ezekiel-utshudi](https://www.linkedin.com/in/ezekiel-utshudi-195782162/)
 
 
 # 🤝 Contributing
