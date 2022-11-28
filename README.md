@@ -46,26 +46,15 @@ _To get a local copy up and running follow these simple steps._
 
 - Bootstrap CSS Framework
 
-# Author 1
-
 👤 **Ben**
 
 - GitHub: [Ben Kiarie](https://github.com/Benmuiruri) - Follow me on Github, browse my projects, and leave a star for any project you like.
 - Twitter: [Optimize](https://twitter.com/_optimize) - Follow me on Twitter I will make your Timeline a bit more interesting
 - LinkedIn: [Ben Kiarie](https://www.linkedin.com/in/benjamin-kiarie-180b66149/) - Connect with me on LinkedIn lets expand our network for mutual benefits.
 
-
-# Author 2
-
-👤 **Ezekiel Utshudi**
-- GitHub: [@EzekielUtshudi](https://github.com/EzekielUtshudi)
-
-
 # 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/Donard97/recipe-app/issues).
 
 # Show your support
 
