@@ -84,6 +84,4 @@ test:
 #
 production:
   <<: *default
-  database: rails_cook_book_production
-  username: rails_cook_book
-  password: <%= ENV["RAILS_COOK_BOOK_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
