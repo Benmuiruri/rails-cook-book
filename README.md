@@ -48,21 +48,11 @@ _To get a local copy up and running follow these simple steps._
 
 - Bootstrap CSS Framework
 
-# Author 1
-
 👤 **Ben**
 
 - GitHub: [Ben Kiarie](https://github.com/Benmuiruri)
 - Twitter: [Optimize](https://twitter.com/_optimize)
 - LinkedIn: [Ben Kiarie](https://www.linkedin.com/in/benjamin-kiarie-180b66149/)
-
-
-# Author 2
-
-👤 **Ezekiel Utshudi**
-- GitHub: [@EzekielUtshudi](https://github.com/EzekielUtshudi)
-- Twitter: [@UtshudiEzekiel](https://twitter.com/UtshudiEzekiel)
-- LinkedIn: [@ezekiel-utshudi](https://www.linkedin.com/in/ezekiel-utshudi-195782162/)
 
 
 # 🤝 Contributing
