@@ -59,8 +59,6 @@ _To get a local copy up and running follow these simple steps._
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Donard97/recipe-app/issues).
-
 # Show your support
 
 Give a ⭐️ if you like this project!
